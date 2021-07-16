@@ -8,5 +8,9 @@ CUR=$(dirname "$0")
 TEMPLATE_DIR=${CUR}/testdata/template
 TEST_DIR=${CUR}/testdata/test
 
-rm -rf ${TEST_DIR}
-cp -r ${TEMPLATE_DIR} ${TEST_DIR}
+if [ -d "${TEST_DIR}" ] 
+then
+    rm -rf "${TEST_DIR}"
+fi
+
+cp -r "${TEMPLATE_DIR}" "${TEST_DIR}"
